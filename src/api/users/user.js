@@ -9,7 +9,7 @@ export function getUserList() {
 export function updateUserState(id, state) {
     return request({
         url: '/userinfo',
-        method:'put',
+        method: 'put',
         data: {
             id: id, //可以直接 简写成 id
             state: state
@@ -18,14 +18,24 @@ export function updateUserState(id, state) {
 }
 // 新增用户
 export function addUserInfo(username, email, mobile) {
-    return request( {
+    return request({
         url: '/userinfo/add',
         method: 'post',
         data: {
-          username,
-          email,
-          mobile
+            username,
+            email,
+            mobile
         }
     })
 
+}
+// 删除用户
+export function deleteUserInfoById(id) {
+    return request({
+        url: '/userinfo/delete',
+        method: 'post',
+        data: {
+            id
+        }
+    })
 }
